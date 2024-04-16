@@ -1,8 +1,5 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KioskSkladiste
 {
@@ -11,12 +8,39 @@ namespace KioskSkladiste
         public Proizvodi()
         {
             InitializeComponent();
+            textBox1.TextChanged += TextBox1_TextChanged;
         }
 
         private void Proizvodi_Load(object sender, EventArgs e)
         {
             Status.SelectedIndex = 0;
             LoadData();
+        }
+        //Task new: prevent user from inputing number larger then integer/give error message 
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            // Temporarily remove the TextChanged event handler to avoid recursion
+            textBox1.TextChanged -= TextBox1_TextChanged;
+
+            // Validate the input to ensure it is within the integer range
+            if (int.TryParse(textBox1.Text, out int value))
+            {
+                if (value < int.MinValue || value > int.MaxValue)
+                {
+                    // Input is out of range
+                    MessageBox.Show($"Please enter a value between {int.MinValue} and {int.MaxValue}.");
+                    textBox1.Clear(); // Clear the text box if the input is out of range
+                }
+            }
+            else
+            {
+                // Input is not a valid integer
+                MessageBox.Show("Please enter a valid integer.");
+                textBox1.Clear(); // Clear the text box if the input is invalid
+            }
+
+            // Reattach the TextChanged event handler
+            textBox1.TextChanged += TextBox1_TextChanged;
         }
 
         private void Product_Load_Click(object sender, EventArgs e)
@@ -33,7 +57,7 @@ namespace KioskSkladiste
                 status = true;
             else
                 status = false;
-            
+
 
             var sqlQuery = "";
             if (ifProductExists(con, textBox1.Text))
@@ -46,8 +70,6 @@ namespace KioskSkladiste
                 "VALUES  ('" + textBox1.Text + "' ,'" + Product_Name.Text + "','" + status + "')";
             }
 
-
-
             //adding new products in database 
             SqlCommand cmd = new SqlCommand(sqlQuery, con);
             cmd.ExecuteNonQuery();
@@ -57,7 +79,7 @@ namespace KioskSkladiste
             LoadData();
 
             //Task new: prevent user from inputing number larger then integer/give error message 
-
+        
             //Task: item is not being selected when updated or added
             // Clear any selection of rows in the data grid view
             dataGridView1.ClearSelection();
@@ -132,7 +154,7 @@ namespace KioskSkladiste
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-GNPDKHR\\SQLEXPRESS;Initial Catalog=inventoryDB;Integrated Security=True");
             var sqlQuery = "";
             if (ifProductExists(con, textBox1.Text))
-            {   
+            {
                 con.Open();
                 sqlQuery = @"DELETE FROM [dbo].[Products] WHERE [ProductCode] = '" + textBox1.Text + "'";
                 SqlCommand cmd = new SqlCommand(sqlQuery, con);
@@ -142,7 +164,7 @@ namespace KioskSkladiste
             else
             {   //Add title to the box
                 MessageBox.Show("Artikal ne postoji");
-                            }
+            }
 
             //clears products before loading from database to prevent doubling data
             dataGridView1.Rows.Clear();
