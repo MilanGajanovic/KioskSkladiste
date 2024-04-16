@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KioskSkladiste")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+522a713369c958b1c19be2fe758b10463dd4af3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+250428f81082687b22463468d90c3fca97a81fe0")]
 [assembly: System.Reflection.AssemblyProductAttribute("KioskSkladiste")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KioskSkladiste")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

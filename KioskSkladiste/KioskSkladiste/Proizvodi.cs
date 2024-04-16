@@ -142,7 +142,7 @@ namespace KioskSkladiste
             else
             {   //Add title to the box
                 MessageBox.Show("Artikal ne postoji");
-            }
+                            }
 
             //clears products before loading from database to prevent doubling data
             dataGridView1.Rows.Clear();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wUOHRiiOZindpfOzM0eUQvVf0KqZMAnRTnup9pYBEVXhGIOPViu2oyQLNEYLRNTi2VGXyASwpUAUit1lxEY34w==",
+  "dgSpecHash": "J/CLqFe/ZOyD9S4BSA1JFngPSPhwSS8FhZOPXf4MzdqdvuvQna3OqyfcRi9FZx3Au6+CcE58RoQUED9/EavmKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
+  "projectFilePath": "c:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Milan\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Milan\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
