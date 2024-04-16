@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Milan\\source\\repos\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
+      "projectUniqueName": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
       "projectName": "KioskSkladiste",
-      "projectPath": "C:\\Users\\Milan\\source\\repos\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
+      "projectPath": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
       "packagesPath": "C:\\Users\\Milan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Milan\\source\\repos\\KioskSkladiste\\KioskSkladiste\\obj\\",
+      "outputPath": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
