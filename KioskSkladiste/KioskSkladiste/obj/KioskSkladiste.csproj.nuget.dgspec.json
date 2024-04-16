@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj": {}
+    "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj": {
+    "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
+        "projectUniqueName": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
         "projectName": "KioskSkladiste",
-        "projectPath": "c:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
+        "projectPath": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste.csproj",
         "packagesPath": "C:\\Users\\Milan\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\obj\\",
+        "outputPath": "C:\\Users\\Milan\\OneDrive\\Desktop\\GitProjects\\KioskSkladiste\\KioskSkladiste\\KioskSkladiste\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
