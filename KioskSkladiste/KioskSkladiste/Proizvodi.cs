@@ -8,7 +8,7 @@ namespace KioskSkladiste
         public Proizvodi()
         {
             InitializeComponent();
-            textBox1.TextChanged += TextBox1_TextChanged;
+
         }
 
         private void Proizvodi_Load(object sender, EventArgs e)
@@ -16,86 +16,67 @@ namespace KioskSkladiste
             Status.SelectedIndex = 0;
             LoadData();
         }
-        //Task new: prevent user from inputing number larger then integer/give error message 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            // Temporarily remove the TextChanged event handler to avoid recursion
-            textBox1.TextChanged -= TextBox1_TextChanged;
 
-            // Validate the input to ensure it is within the integer range
-            if (int.TryParse(textBox1.Text, out int value))
-            {
-                if (value < int.MinValue || value > int.MaxValue)
-                {
-                    // Input is out of range
-                    MessageBox.Show($"Please enter a value between {int.MinValue} and {int.MaxValue}.");
-                    textBox1.Clear(); // Clear the text box if the input is out of range
-                }
-            }
-            else
-            {
-                // Input is not a valid integer
-                MessageBox.Show("Please enter a valid integer.");
-                textBox1.Clear(); // Clear the text box if the input is invalid
-            }
-
-            // Reattach the TextChanged event handler
-            textBox1.TextChanged += TextBox1_TextChanged;
-        }
-
+        //TASK: Set typing cursor next to word when clicked on text boxes - NOT SOLVED
+        
         private void Product_Load_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-GNPDKHR\\SQLEXPRESS;Initial Catalog=inventoryDB;Integrated Security=True");
-            con.Open();
-
-            //clears products display before loading from database to prevent issue with adding double products
-            dataGridView1.Rows.Clear();
-            bool status = false;
-
-            //checking status bc default is always 0
-            if (Status.SelectedIndex == 0)
-                status = true;
-            else
-                status = false;
-
-
-            var sqlQuery = "";
-            if (ifProductExists(con, textBox1.Text))
+            if (Validation())
             {
-                sqlQuery = @"UPDATE [dbo].[Products] SET [ProductName] = '" + Product_Name.Text + "' ,[ProductStatus] = '" + status + "' WHERE [ProductCode] = '" + textBox1.Text + "'";
-            }
-            else
-            {
-                sqlQuery = @"INSERT INTO [Products] ([ProductCode] ,[ProductName]" + ",[ProductStatus])" + "" +
-                "VALUES  ('" + textBox1.Text + "' ,'" + Product_Name.Text + "','" + status + "')";
-            }
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-GNPDKHR\\SQLEXPRESS;Initial Catalog=inventoryDB;Integrated Security=True");
+                con.Open();
 
-            //adding new products in database 
-            SqlCommand cmd = new SqlCommand(sqlQuery, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+                //clears products display before loading from database to prevent issue with adding double products
+                dataGridView1.Rows.Clear();
+                bool status = false;
 
-            //Loading products
-            LoadData();
+                //checking status bc default is always 0
+                if (Status.SelectedIndex == 0)
+                    status = true;
+                else
+                    status = false;
 
-            //Task new: prevent user from inputing number larger then integer/give error message 
-        
-            //Task: item is not being selected when updated or added
-            // Clear any selection of rows in the data grid view
-            dataGridView1.ClearSelection();
 
-            // Highlight the specific row corresponding to the updated or added item
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[0].Value.ToString() == textBox1.Text)
+                var sqlQuery = "";
+                if (ifProductExists(con, textBox1.Text))
                 {
-                    // Set the current cell to the specific row
-                    dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells[0];
-                    break;
+                    sqlQuery = @"UPDATE [dbo].[Products] SET [ProductName] = '" + Product_Name.Text + "' ,[ProductStatus] = '" + status + "' WHERE [ProductCode] = '" + textBox1.Text + "'";
+                }
+                else
+                {
+                    sqlQuery = @"INSERT INTO [Products] ([ProductCode] ,[ProductName]" + ",[ProductStatus])" + "" +
+                    "VALUES  ('" + textBox1.Text + "' ,'" + Product_Name.Text + "','" + status + "')";
+                }
+
+                //adding new products in database 
+                SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                //Loading products
+                LoadData();
+
+                ClearText();
+                // TASK: item is not highlighted when updated or added - SOLVED/NOT NECESSARY
+
+                // Clear any selection of rows in the data grid view
+                dataGridView1.ClearSelection();
+
+                // Highlight the specific row corresponding to the updated or added item
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == textBox1.Text)
+                    {
+                        // Set the current cell to the specific row
+                        dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells[0];
+                        break;
+                    }
                 }
             }
+
         }
 
+        // Function so I can check for products availability while loading or deleting record in/from database
         private bool ifProductExists(SqlConnection con, string productCode)
         {
             SqlDataAdapter sda = new SqlDataAdapter("SELECT 1 FROM [Products] WHERE [ProductCode] = '" + productCode + "'", con);
@@ -132,8 +113,10 @@ namespace KioskSkladiste
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            //TASK: When clicked on empty dataGridView it throws an error for
+            //TASK: When clicked on empty dataGridView it throws an error - NOT SOLVED
             //TASK: Prevent data in dataGrid to be visibly editable and able to click like text box
+
+            Product_Load.Text = "Uredi";
 
             //adding info in boxes when item is selected by single click 
             textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -147,6 +130,7 @@ namespace KioskSkladiste
             {
                 Status.SelectedIndex = 1;
             }
+
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -171,9 +155,44 @@ namespace KioskSkladiste
 
             //Loading products
             LoadData();
+
+            ClearText();
+        }
+
+        // TASK: Changing "Dodaj" - "Uredi" button text when updating products
+        private void ClearText()
+        {
+            textBox1.Clear();
+            Product_Name.Clear();
+            Product_Load.Text = "Dodaj";
+            textBox1.Focus();
+        }
+
+        // TASK/Branch-Integer testing: prevent user from inputing number larger then integer or if not integer/give error message 
+        private bool Validation()
+        {
+          
+            // Check if Product_Name or textBox1 is empty or contains only whitespace
+            if (string.IsNullOrWhiteSpace(Product_Name.Text) || string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Both product code and product name must be provided. Please enter valid values.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Try to parse the value in textBox1 as an integer
+            if (!int.TryParse(textBox1.Text, out _))
+            {
+                // Display error message if textBox1 contains invalid input
+                MessageBox.Show("Product code must be a valid integer. Please enter a valid product code.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // If both fields are valid, return true
+            return true;
         }
     }
 }
+
 
 
 
