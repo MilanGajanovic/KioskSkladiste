@@ -65,6 +65,7 @@
             stanjeToolStripMenuItem.Name = "stanjeToolStripMenuItem";
             stanjeToolStripMenuItem.Size = new Size(64, 24);
             stanjeToolStripMenuItem.Text = "Stanje";
+            stanjeToolStripMenuItem.Click += stanjeToolStripMenuItem_Click;
             // 
             // izvještajToolStripMenuItem
             // 

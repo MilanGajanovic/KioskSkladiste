@@ -33,13 +33,13 @@
             textBox1 = new TextBox();
             Product_Name = new TextBox();
             dataGridView1 = new DataGridView();
-            productCode = new DataGridViewTextBoxColumn();
-            productName = new DataGridViewTextBoxColumn();
-            productStatus = new DataGridViewTextBoxColumn();
             Status = new ComboBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            productCode = new DataGridViewTextBoxColumn();
+            productName = new DataGridViewTextBoxColumn();
+            productStatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -95,27 +95,6 @@
             dataGridView1.TabIndex = 5;
             dataGridView1.MouseClick += dataGridView1_MouseClick;
             // 
-            // productCode
-            // 
-            productCode.HeaderText = "Šifra";
-            productCode.MinimumWidth = 6;
-            productCode.Name = "productCode";
-            productCode.Width = 125;
-            // 
-            // productName
-            // 
-            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            productName.HeaderText = "Naziv artikla";
-            productName.MinimumWidth = 6;
-            productName.Name = "productName";
-            // 
-            // productStatus
-            // 
-            productStatus.HeaderText = "Status";
-            productStatus.MinimumWidth = 6;
-            productStatus.Name = "productStatus";
-            productStatus.Width = 125;
-            // 
             // Status
             // 
             Status.Font = new Font("Segoe UI", 10.9F);
@@ -155,6 +134,30 @@
             label3.TabIndex = 9;
             label3.Text = "Status";
             // 
+            // productCode
+            // 
+            productCode.HeaderText = "Šifra";
+            productCode.MinimumWidth = 6;
+            productCode.Name = "productCode";
+            productCode.ReadOnly = true;
+            productCode.Width = 125;
+            // 
+            // productName
+            // 
+            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            productName.HeaderText = "Naziv artikla";
+            productName.MinimumWidth = 6;
+            productName.Name = "productName";
+            productName.ReadOnly = true;
+            // 
+            // productStatus
+            // 
+            productStatus.HeaderText = "Status";
+            productStatus.MinimumWidth = 6;
+            productStatus.Name = "productStatus";
+            productStatus.ReadOnly = true;
+            productStatus.Width = 125;
+            // 
             // Proizvodi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -186,12 +189,12 @@
         private TextBox textBox1;
         private TextBox Product_Name;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn productCode;
-        private DataGridViewTextBoxColumn productName;
-        private DataGridViewTextBoxColumn productStatus;
         private ComboBox Status;
         private Label label1;
         private Label label2;
         private Label label3;
+        private DataGridViewTextBoxColumn productCode;
+        private DataGridViewTextBoxColumn productName;
+        private DataGridViewTextBoxColumn productStatus;
     }
 }
