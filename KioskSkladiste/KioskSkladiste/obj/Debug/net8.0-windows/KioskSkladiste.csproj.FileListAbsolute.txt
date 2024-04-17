@@ -50,3 +50,4 @@ c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskS
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.pdb
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.genruntimeconfig.cache
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\ref\KioskSkladiste.dll
+C:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.Stock.resources

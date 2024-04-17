@@ -114,7 +114,9 @@ namespace KioskSkladiste
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             //TASK: When clicked on empty dataGridView it throws an error - NOT SOLVED
-            //TASK: Prevent data in dataGrid to be visibly editable and able to click like text box
+            //TASK: Prevent data in dataGrid to be visibly editable and able to click like text box - SOLVED
+            //SOLVED -Edited columns in dataGridView to Read Only = True
+            
 
             Product_Load.Text = "Uredi";
 

@@ -12,8 +12,7 @@ namespace KioskSkladiste
 {
     public partial class GlavniMeni : Form
     {
-        private int childFormNumber = 0;
-
+        
         public GlavniMeni()
         {
             InitializeComponent();
@@ -28,7 +27,16 @@ namespace KioskSkladiste
         {
             Proizvodi pro = new Proizvodi();
             pro.MdiParent = this;
-            pro.Show(); 
+            pro.StartPosition = FormStartPosition.CenterScreen;
+            pro.Show();
+        }
+
+        private void stanjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stock stk = new Stock();
+            stk.MdiParent = this;
+            stk.StartPosition = FormStartPosition.CenterScreen;
+            stk.Show();
         }
     }
 }
