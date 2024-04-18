@@ -7,9 +7,6 @@
     <Compile Update="GlavniMeni.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Proizvodi.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Stock.cs">
       <SubType>Form</SubType>
     </Compile>

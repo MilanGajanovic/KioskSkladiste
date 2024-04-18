@@ -37,7 +37,6 @@ c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskS
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.csproj.AssemblyReference.cache
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.GlavniMeni.resources
-c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.Proizvodi.resources
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.csproj.GenerateResource.cache
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.GeneratedMSBuildEditorConfig.editorconfig
 c:\Users\Milan\OneDrive\Desktop\GitProjects\KioskSkladiste\KioskSkladiste\KioskSkladiste\obj\Debug\net8.0-windows\KioskSkladiste.AssemblyInfoInputs.cache
