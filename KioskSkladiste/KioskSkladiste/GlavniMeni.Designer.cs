@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             menuStrip = new MenuStrip();
-            proziToolStripMenuItem = new ToolStripMenuItem();
             stanjeToolStripMenuItem = new ToolStripMenuItem();
             izvještajToolStripMenuItem = new ToolStripMenuItem();
             sviProizvodiToolStripMenuItem = new ToolStripMenuItem();
@@ -45,20 +44,13 @@
             // menuStrip
             // 
             menuStrip.ImageScalingSize = new Size(20, 20);
-            menuStrip.Items.AddRange(new ToolStripItem[] { proziToolStripMenuItem, stanjeToolStripMenuItem, izvještajToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { stanjeToolStripMenuItem, izvještajToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Padding = new Padding(8, 3, 0, 3);
             menuStrip.Size = new Size(843, 30);
             menuStrip.TabIndex = 0;
             menuStrip.Text = "MenuStrip";
-            // 
-            // proziToolStripMenuItem
-            // 
-            proziToolStripMenuItem.Name = "proziToolStripMenuItem";
-            proziToolStripMenuItem.Size = new Size(85, 24);
-            proziToolStripMenuItem.Text = "Proizvodi";
-            proziToolStripMenuItem.Click += proziToolStripMenuItem_Click;
             // 
             // stanjeToolStripMenuItem
             // 
@@ -131,7 +123,6 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
-        private ToolStripMenuItem proziToolStripMenuItem;
         private ToolStripMenuItem stanjeToolStripMenuItem;
         private ToolStripMenuItem izvještajToolStripMenuItem;
         private ToolStripMenuItem sviProizvodiToolStripMenuItem;

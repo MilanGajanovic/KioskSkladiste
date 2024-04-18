@@ -23,14 +23,6 @@ namespace KioskSkladiste
             Application.Exit();
         }
 
-        private void proziToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Proizvodi pro = new Proizvodi();
-            pro.MdiParent = this;
-            pro.StartPosition = FormStartPosition.CenterScreen;
-            pro.Show();
-        }
-
         private void stanjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stock stk = new Stock();
